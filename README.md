@@ -11,6 +11,13 @@ This project is an advanced, interactive personal portfolio website. Building up
 
 ---
 
+## Live Demo
+
+ https://lameesalharbi.github.io/202256280-lameesalharbi-assignment4/
+ 
+
+---
+
 ## Key Features
 
 ### API Integration
