@@ -123,7 +123,7 @@ Techniques:
 
 ---
 
-### G. Innovation: Skills Orbit Animation
+### G. Innovation: Tech Orbit Animation
 
 A unique feature was implemented to visually represent technical skills.
 

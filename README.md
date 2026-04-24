@@ -41,7 +41,7 @@ This project is an advanced, interactive personal portfolio website. Building up
 - Custom cursor (desktop only)
 
 ### Innovation
-- **Skills Orbit Animation:**  
+- **Tech Orbit Animation:**  
   A space-themed visualization where technologies orbit around a central node, representing how different skills are interconnected in my development journey.  
 - Subtle glassmorphism styling with tinted skill elements for a modern and aesthetic UI
 
