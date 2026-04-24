@@ -40,6 +40,11 @@ This project is an advanced, interactive personal portfolio website. Building up
 - Interactive project cards
 - Custom cursor (desktop only)
 
+### Innovation
+- **Skills Orbit Animation:**  
+  A space-themed visualization where technologies orbit around a central node, representing how different skills are interconnected in my development journey.  
+- Subtle glassmorphism styling with tinted skill elements for a modern and aesthetic UI
+
 ### Performance & Responsiveness
 - Responsive across mobile, tablet, and desktop
 - Lazy loading images
@@ -58,7 +63,8 @@ This project is an advanced, interactive personal portfolio website. Building up
 7. Refresh the quote section
 8. Toggle dark/light mode
 9. Refresh page to see saved preferences
-10. Test the contact form
+10. Explore the Skills Orbit section
+11. Test the contact form
 
 ---
 
@@ -99,6 +105,7 @@ This project is an advanced, interactive personal portfolio website. Building up
 ##  AI Integration Summary
 AI tools (Gemini and ChatGPT) were used to assist with debugging, feature planning, API integration, and improving overall code structure. 
 All AI-generated suggestions were reviewed, tested, and modified before being integrated into the project.
+
 Full details are provided in:
 - `docs/ai-usage-report.md`
 

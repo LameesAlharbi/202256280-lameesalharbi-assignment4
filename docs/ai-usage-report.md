@@ -1,4 +1,4 @@
-# AI Usage Report — Assignment 3
+# AI Usage Report — Assignment 4
 
 **Student:** Lamees Alharbi  
 **Tools:** Gemini 3, ChatGPT  
@@ -11,120 +11,108 @@
 ### A. UI/UX: Glassmorphism Implementation
 * **Prompting Strategy:** I requested a "frosted glass" CSS architecture that would remain legible over a high-contrast background.
 * **AI Contribution:** Provided the foundational `backdrop-filter: blur()` and `rgba` background logic.
-* **Refinement & Adaptation:** I found the initial AI suggestion (10px blur) was too "see-through" on iPad displays. I manually increased the blur to **20px** and added `saturate(150%)` and `contrast(100%)` to ensure the "Daily Inspiration" text met accessibility standards.
+* **Refinement & Adaptation:** I adjusted the blur intensity to **20px** and fine-tuned contrast and saturation to ensure readability across devices, especially on iPad screens.
 
 ---
 
 ### B. Responsive Debugging (iPad & iPhone)
-* **The Problem:** During testing on an **iPhone 16 Pro (402x874px)**, the "About Me" and "Skills" sections were shifting 20px to the left, creating an unprofessional horizontal overflow.
-* **AI Troubleshooting:** I shared my CSS structure with AI to identify layout conflicts. The AI detected that fixed widths were clashing with internal padding.
-* **The Solution:** Following AI guidance, I implemented `box-sizing: border-box` and transitioned from fixed pixel widths to **viewport-relative widths (92%)**, ensuring consistent layout across devices.
+* **The Problem:** Layout shifting and horizontal overflow on mobile devices.
+* **AI Troubleshooting:** AI identified conflicts between fixed widths and padding.
+* **The Solution:** Implemented `box-sizing: border-box` and switched to viewport-based widths, ensuring consistent layout across all screen sizes.
 
 ---
 
-### C. Asynchronous Data Handling (API)
-* **AI Contribution:** Provided the initial structure for the `fetch()` logic using the **DummyJSON Quotes API**.
-* **Modification:** I enhanced the implementation by adding a `try/catch` block for error handling and included a **loading state** in the DOM to provide immediate user feedback during API requests.
-* **Outcome:** The "Daily Inspiration" section dynamically fetches and displays quotes with graceful failure handling.
+### C. API Integration (Quotes + GitHub)
+* **AI Contribution:** Assisted in structuring `fetch()` logic using `async/await`.
+* **Enhancements:**
+  - Added `try/catch` for error handling
+  - Implemented loading states for better UX
+* **Challenges:** Encountered GitHub API rate limiting (403 errors) and resolved it through debugging and proper request handling.
 
 ---
 
-### D. Hardware-Specific Optimization
-* **The Bug:** A custom cursor effect caused visual artifacts ("stains") on touch-screen devices.
-* **AI Solution:** Suggested using `matchMedia("(pointer: fine)")` to detect pointer type.
-* **Result:** The cursor effect is now enabled only for mouse devices, improving cross-device usability.
+### D. Advanced Logic (Filtering, Searching, Sorting)
+* **AI Contribution:** Helped design a system combining multiple logical operations.
+* **Implementation:** Applied sequential processing:
+  1. Filter data
+  2. Apply search conditions
+  3. Sort results
+  4. Render dynamically
+* **Outcome:** Transformed the project section into an interactive system rather than a static display.
 
 ---
 
-# 2. Assignment 3 Enhancements with AI Support
-
-### A. GitHub API Integration
-* **The Goal:** Extend the portfolio by adding a second API that displays live project data.
-* **AI Contribution:** Assisted in implementing the GitHub API using `fetch()` to dynamically retrieve repositories.
-* **Challenges & Fixes:** I encountered API rate-limiting issues (`403 error`). With AI guidance, I diagnosed the issue and tested solutions such as authentication headers and request adjustments. I also ensured proper error handling was in place.
-* **Outcome:** Successfully integrated a live GitHub section displaying repository names, descriptions, languages, and links.
-
----
-
-### B. Advanced Project Logic (Filtering, Searching, Sorting)
-* **The Goal:** Enhance application logic beyond simple interactions.
-* **AI Contribution:** Helped structure a system combining:
-  - category filtering
-  - live search functionality
-  - alphabetical sorting (A–Z and Z–A)
-* **Learning:** I learned how to apply multiple conditions sequentially and manipulate datasets dynamically using JavaScript.
-* **Outcome:** The project gallery now behaves as a fully interactive system rather than a static display.
+### E. State Management (LocalStorage)
+* **AI Contribution:** Guided implementation of persistent user preferences.
+* **Stored Data:**
+  - Theme (dark/light mode)
+  - Filter selection
+  - Search input
+  - Sorting option
+* **Outcome:** Improved user experience by maintaining state across page reloads.
 
 ---
 
-### C. State Management with localStorage
-* **The Goal:** Persist user preferences across sessions.
-* **AI Contribution:** Guided the implementation of `localStorage` to store:
-  - theme preference
-  - selected project filter
-  - search input
-  - sorting option
-* **Learning:** I understood how to store and retrieve browser data to maintain application state.
-* **Outcome:** The website now remembers user interactions even after page reloads.
+### F. Innovation: Skills Orbit Visualization
+* **The Goal:** Add a unique and visually engaging feature to represent technical skills.
+* **AI Contribution:** Assisted in structuring a CSS-based orbit animation.
+* **My Adaptation:**
+  - Designed a **space-themed orbit system** where skills rotate around a central node
+  - Added **individual color tinting** for each skill to enhance visual distinction
+  - Ensured smooth animation and responsiveness across devices
+* **Outcome:** Created a unique, design-focused feature that visually represents the relationship between technologies.
 
 ---
 
-### D. Debugging and Code Refinement
-* **AI Contribution:** Assisted in identifying JavaScript syntax errors and structural issues.
-* **Example:** Fixed a critical error where a function was incorrectly nested inside another function, preventing execution.
-* **Outcome:** Improved code stability and reinforced understanding of proper function structure and debugging techniques.
+# 2. Evidence of Understanding & Learning
+
+I ensured full understanding of all AI-assisted solutions:
+
+1. **CSS Effects:** Learned how `backdrop-filter` and transparency create glassmorphism
+2. **Responsive Design:** Understood layout control using `border-box` and flexible sizing
+3. **Asynchronous JavaScript:** Gained experience using `fetch`, `async/await`, and error handling
+4. **API Integration:** Learned how to work with external APIs and handle limitations
+5. **State Management:** Understood how `localStorage` preserves user interaction
+6. **Animation & UI Design:** Learned how CSS transforms and keyframes can create dynamic visual effects
 
 ---
 
-# 3. Evidence of Understanding & Learning
-
-I ensured full comprehension of all AI-assisted solutions:
-
-1. **Vendor Prefixes:** Learned that `-webkit-backdrop-filter` is required for Safari compatibility.
-2. **CSS Box Model:** Understood how `border-box` controls layout sizing.
-3. **Media Queries:** Learned to detect input types (touch vs. mouse).
-4. **API Handling:** Gained experience in asynchronous data fetching and error handling.
-5. **State Management:** Learned how `localStorage` preserves user preferences.
-6. **JavaScript Logic:** Understood how filtering, searching, and sorting interact within the same dataset.
-
----
-
-# 4. Benefits & Challenges
+# 3. Benefits & Challenges
 
 ### Benefits
-AI acted as a "senior developer assistant," helping:
-- break down complex problems into manageable steps
-- debug issues efficiently
-- suggest structured solutions for advanced features
-- improve overall code organization and logic
+AI acted as a development assistant by:
+- simplifying complex problems
+- accelerating debugging
+- suggesting structured solutions
+- improving code organization
 
 ### Challenges
-- Some AI suggestions required adaptation to fit my project structure
-- Initial styling suggestions did not match my design vision and required manual refinement
-- API rate-limiting required additional troubleshooting and understanding of external service limitations
+- Some AI suggestions required modification to fit design goals
+- Styling required manual refinement for consistency
+- API limitations required additional debugging and understanding
 
 ---
 
-# 5. Learning Outcomes
+# 4. Learning Outcomes
 
 Through this assignment, I developed:
 
-- strong understanding of API integration (Quotes API and GitHub API)
-- ability to implement advanced logic combining multiple conditions
-- practical experience with state management using localStorage
-- improved debugging and problem-solving skills
-- ability to refine and adapt AI-generated solutions into a functional system
+- strong understanding of API integration and asynchronous programming  
+- ability to implement complex interactive logic  
+- experience with state persistence using localStorage  
+- improved UI/UX design skills  
+- ability to adapt and refine AI-generated solutions  
 
 ---
 
-# 6. Responsible Use and Reflection
+# 5. Responsible Use and Reflection
 
-AI was used as a support tool rather than a direct solution provider.
+AI was used as a support tool, not a direct solution provider.
 
 I ensured responsible use by:
-- reviewing and understanding all AI-generated code
-- modifying suggestions to fit my project design and requirements
-- testing all features independently
-- debugging issues with AI guidance rather than copying solutions
+- reviewing and understanding all generated code  
+- modifying solutions to fit my design and requirements  
+- testing all features independently  
+- using AI primarily for guidance and debugging  
 
-The final implementation reflects my own understanding, with AI serving as a tool for guidance, optimization, and learning.
+The final implementation reflects my own understanding, with AI serving as a tool for learning and enhancement.

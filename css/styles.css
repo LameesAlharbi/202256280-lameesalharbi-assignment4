@@ -838,3 +838,132 @@ body {
 [data-scramble].scramble-done {
   opacity: 1;
 }
+
+/* ============================================================
+   SKILLS ORBIT
+   ============================================================ */
+.orbit-system {
+  position: relative;
+  width: min(700px, 100%);
+  height: 460px;
+  margin: 20px auto 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, rgba(124, 108, 240, 0.18), transparent 28%),
+    radial-gradient(circle at center, transparent 34%, rgba(167, 139, 250, 0.12) 35%, transparent 36%),
+    radial-gradient(circle at center, transparent 52%, rgba(167, 139, 250, 0.1) 53%, transparent 54%),
+    radial-gradient(circle at center, transparent 70%, rgba(167, 139, 250, 0.08) 71%, transparent 72%);
+  overflow: visible;
+}
+
+.orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 88px;
+  height: 88px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 36px var(--accent-glow);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.2rem;
+  z-index: 3;
+}
+
+.orbit-skill {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  color: var(--text-main);
+  box-shadow: 0 0 18px rgba(124, 108, 240, 0.18);
+
+  animation: orbit 18s linear infinite;
+
+  transform:
+    rotate(var(--angle))
+    translateX(var(--distance))
+    rotate(calc(-1 * var(--angle)));
+}
+
+.orbit-skill-1 { background: rgba(255, 99, 132, 0.15); }   /* Java */
+.orbit-skill-2 { background: rgba(255, 206, 86, 0.15); }   /* JS */
+.orbit-skill-3 { background: rgba(54, 162, 235, 0.15); }   /* Flutter */
+.orbit-skill-4 { background: rgba(75, 192, 192, 0.15); }   /* Python */
+.orbit-skill-5 { background: rgba(153, 102, 255, 0.15); }  /* C++ */
+.orbit-skill-6 { background: rgba(255, 159, 64, 0.15); }   /* HTML */
+.orbit-skill-7 { background: rgba(0, 200, 255, 0.15); }    /* CSS */
+
+.orbit-skill-1 { --angle: 0deg; --distance: 170px; }
+.orbit-skill-2 { --angle: 52deg; --distance: 195px; animation-duration: 22s; }
+.orbit-skill-3 { --angle: 104deg; --distance: 160px; animation-duration: 20s; }
+.orbit-skill-4 { --angle: 156deg; --distance: 205px; animation-duration: 24s; }
+.orbit-skill-5 { --angle: 208deg; --distance: 165px; animation-duration: 21s; }
+.orbit-skill-6 { --angle: 260deg; --distance: 190px; animation-duration: 23s; }
+.orbit-skill-7 { --angle: 312deg; --distance: 155px; animation-duration: 19s; }
+
+@keyframes orbit {
+  from {
+    transform:
+      rotate(var(--angle))
+      translateX(var(--distance))
+      rotate(calc(-1 * var(--angle)));
+  }
+  to {
+    transform:
+      rotate(calc(var(--angle) + 360deg))
+      translateX(var(--distance))
+      rotate(calc(-1 * (var(--angle) + 360deg)));
+  }
+}
+
+.orbit-skill:hover {
+  transform: scale(1.1)
+    rotate(var(--angle))
+    translateX(var(--distance))
+    rotate(calc(-1 * var(--angle)));
+
+  box-shadow: 0 0 25px var(--accent-glow);
+}
+
+@media (max-width: 600px) {
+  .orbit-system {
+    height: 330px;
+  }
+
+  .orbit-center {
+    width: 72px;
+    height: 72px;
+    font-size: 1rem;
+  }
+
+  .orbit-skill {
+    font-size: 0.72rem;
+    padding: 6px 10px;
+  }
+
+  .orbit-skill-1,
+  .orbit-skill-3,
+  .orbit-skill-5,
+  .orbit-skill-7 {
+    --distance: 115px;
+  }
+
+  .orbit-skill-2,
+  .orbit-skill-4,
+  .orbit-skill-6 {
+    --distance: 135px;
+  }
+}
